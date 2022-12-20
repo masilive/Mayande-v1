@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Mayande.Models.Charts;
 
 namespace Mayande.Controllers
 {
@@ -6,7 +7,7 @@ namespace Mayande.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(Candlesticks.GetRollingWindow());
         }
     }
 }
