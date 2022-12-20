@@ -2,12 +2,10 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func?.apply(this, args), wait);
-    };
+let timeout;
+function useDebounce(func, wait) {
+    clearTimeout(timeout);
+    timeout = setTimeout(func, wait);
 }
 
 let chartHeight = 0;
@@ -23,8 +21,8 @@ const setChartDimensions = () => {
     }
 }
 
-const debouncedSetChartDimensions = debounce(setChartDimensions(), 750);
+setChartDimensions();
 
 window.onresize = () => {
-    debouncedSetChartDimensions();
+    useDebounce(setChartDimensions, 750);
 }
