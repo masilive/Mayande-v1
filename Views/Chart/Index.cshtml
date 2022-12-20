@@ -4,6 +4,11 @@
 
 <div class="text-center">
     <svg id="chart" class="bg-black w-100">
-
+        <g stroke-width="1">
+            @for (int i = 0; i < Model.Length; i++)
+            {
+                <polygon points='@Model[i].Points' fill='@Model[i].GetCandleColor()' />
+            }
+        </g>
     </svg>
 </div>
