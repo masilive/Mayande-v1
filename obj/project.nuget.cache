@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "l+i+oiIhg2hlh1Ah6NWq5zPbWKM3uIzM+jjCPz5Xq/mOlS3bLCyNWYvlc6UOj1UOQS92fs8MbmBadYubNDmTyg==",
+  "dgSpecHash": "36zIGwMMFy4aHYnFAxfBuBhBeFF/clzU5x1NiseGMG9th/mPAUvfD9uB9oezKmPNH4LqWSzhzathgE9Nk1dIcw==",
   "success": true,
   "projectFilePath": "C:\\Source\\Mayande\\Mayande.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mikes\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.28\\microsoft.windows.sdk.net.ref.10.0.22621.28.nupkg.sha512"
+  ],
   "logs": []
 }

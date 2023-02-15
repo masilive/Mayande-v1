@@ -6,3 +6,11 @@ bin/x64/
 obj/Debug/
 
 obj/x64/Debug/
+
+bin/Debug/
+
+bin/Release/
+
+obj/Release/
+
+obj/publish/

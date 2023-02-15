@@ -7,20 +7,14 @@
         public float High { get; set; }
         public float Low { get; set; }
         public float Close { get; set; }
-        public float Volume { get; set; }
-        public string Points { get; set; }
+        public ushort Volume { get; set; }
         public string GetCandleColor()
         {
             return Open > Close ? "red" : "lime";
         }
-    }
-    public struct Candlesticks
-    {
-        public static Candlestick[] GetRollingWindow()
+        public string GetPolyPoints(CandlestickInfo candlestickInfo, ushort index)
         {
-            return new Candlestick[] {
-                new Candlestick() { Points = "50,50 30,70 50,100 70,70 50,50" }
-            };
+            return CandlestickHelper.CalculatePolyPoints(index, this, candlestickInfo.ChartHeight, candlestickInfo.HighestPrice, candlestickInfo.Spread);
         }
     }
 }

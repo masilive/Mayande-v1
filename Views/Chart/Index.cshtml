@@ -1,14 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Chart Page";
+    ushort i = 0;
 }
 
 <div class="text-center">
     <svg id="chart" class="bg-black w-100">
         <g stroke-width="1">
-            @for (int i = 0; i < Model.Length; i++)
+            @i = 0;
+            @foreach (var candlestick in @Model.GetRollingWindow())
             {
-                <polygon points='@Model[i].Points' fill='@Model[i].GetCandleColor()' />
+                <polygon points='@candlestick.GetPolyPoints(Model.CandlestickInfo, i)' fill='@candlestick.GetCandleColor()' />
+                i++;
             }
         </g>
     </svg>
 </div>
+<script type="text/javascript">
+    document.onreadystatechange = () => {
+        if (document.readyState === 'complete'){
+            
+        }
+    }
+</script>
