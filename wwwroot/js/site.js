@@ -26,3 +26,16 @@ setChartDimensions();
 window.onresize = () => {
     useDebounce(setChartDimensions, 750);
 }
+
+document.onreadystatechange = () => {
+    try {
+        if (document.readyState === 'complete') {
+            $.post("Chart/SetChartHeight", { chartHeight: document.getElementById("chart").getAttribute('height') }, function (_data) {
+                //do whatever with the response
+
+            });
+        }
+    } catch {
+
+    }
+}

@@ -5,9 +5,19 @@ namespace Mayande.Controllers
 {
     public class ChartController : Controller
     {
+        private CandlestickWrapper _candlestickWrapper;
         public IActionResult Index()
         {
-            return View(Candlesticks.GetRollingWindow());
+            _candlestickWrapper = new ();
+
+            return View(_candlestickWrapper);
+        }
+
+        public Action? SetChartHeight(double chartHeight)
+        {
+            _candlestickWrapper.CandlestickInfo = new CandlestickInfo(chartHeight);
+
+            return default;
         }
     }
 }
